@@ -49,6 +49,7 @@ namespace EmployeeManagement.Api.Data
                 Gender = Gender.Male,
                 DepartmentId = 2,
                 PhotoPath = "images/sam.jpg"
+
             });
 
             modelBuilder.Entity<Employee>().HasData(new Employee
