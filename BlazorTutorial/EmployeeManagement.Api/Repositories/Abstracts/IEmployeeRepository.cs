@@ -10,6 +10,7 @@ namespace EmployeeManagement.Api.Repositories.Abstracts
         Task<Employee> GetEmployee(int employeeId);
         Task<Employee> AddEmployee(Employee employee);
         Task<Employee> UpdateEmployee(Employee employee);
-        void DeleteEmployee(int employeeId);
+        Task<Employee> DeleteEmployee(int id);
+        Task<IEnumerable<Employee>> Search(string name, Gender? gender);
     }
 }
