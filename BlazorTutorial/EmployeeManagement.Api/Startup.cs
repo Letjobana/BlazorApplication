@@ -1,4 +1,6 @@
 using EmployeeManagement.Api.Data;
+using EmployeeManagement.Api.Repositories.Abstracts;
+using EmployeeManagement.Api.Repositories.Concrets;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +26,8 @@ namespace EmployeeManagement.Api
 
             services.AddControllers();
             services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EmployeeManagement.Api", Version = "v1" });
