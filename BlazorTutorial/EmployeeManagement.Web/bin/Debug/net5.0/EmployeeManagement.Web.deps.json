@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "EmployeeManagement.Web/1.0.0": {
         "dependencies": {
+          "EmployeeManagement.Models": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -322,6 +323,14 @@
         },
         "compile": {
           "EmployeeManagement.Web.dll": {}
+        }
+      },
+      "EmployeeManagement.Models/1.0.0": {
+        "runtime": {
+          "EmployeeManagement.Models.dll": {}
+        },
+        "compile": {
+          "EmployeeManagement.Models.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
@@ -2026,6 +2035,11 @@
   },
   "libraries": {
     "EmployeeManagement.Web/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EmployeeManagement.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

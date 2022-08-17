@@ -82,7 +82,8 @@ using EmployeeManagement.Web.Shared;
 #line default
 #line hidden
 #nullable disable
-    public partial class EmployeeList : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    public partial class EmployeeList : EmployeeListBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
