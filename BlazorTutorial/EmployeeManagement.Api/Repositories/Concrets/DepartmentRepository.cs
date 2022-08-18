@@ -1,8 +1,10 @@
 ﻿using EmployeeManagement.Api.Data;
 using EmployeeManagement.Api.Repositories.Abstracts;
 using EmployeeManagement.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace EmployeeManagement.Api.Repositories.Concrets
 {
@@ -14,14 +16,14 @@ namespace EmployeeManagement.Api.Repositories.Concrets
         {
             this.context = context;
         }
-        public Department GetDepartment(int departmentId)
+        public async Task<Department> GetDepartment(int departmentId)
         {
-            return context.Departments.FirstOrDefault(d => d.DepartmentId == departmentId);
+            return await context.Departments.FirstOrDefaultAsync(d => d.DepartmentId == departmentId);
         }
 
-        public IEnumerable<Department> GetDepartments()
+        public async Task<IEnumerable<Department>> GetDepartments()
         {
-            return context.Departments;
+            return await context.Departments.ToListAsync();
         }
     }
 }
