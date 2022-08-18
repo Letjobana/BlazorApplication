@@ -37,7 +37,7 @@ namespace EmployeeManagement.Api.Repositories.Concrets
 
         public async Task<Employee> GetEmployee(int employeeId)
         {
-            return await context.Employees.FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
+            return await context.Employees.Include(x => x.Department).FirstOrDefaultAsync(e => e.EmployeeId == employeeId);
         }
 
         public async Task<IEnumerable<Employee>> GetEmployees()
